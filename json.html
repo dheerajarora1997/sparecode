@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+ <h1>Open console</h1>
+ 
+ <script>
+  obj = {
+    "2": "Buenos Aires",
+    "3": "Catamara",
+    "16": "Chaco",
+    "17": "Chubut",
+    "1": "Ciudad Aut\u00f3noma de Buenos Aires",
+    "4": "C\u00f3rdoba",
+    "5": "Corrientes",
+    "6": "Entre R\u00edos",
+    "18": "Formosa",
+    "7": "Jujuy",
+    "21": "La Pampa",
+    "9": "La Rioja",
+    "8": "Mendoza",
+    "19": "Misiones",
+    "20": "Neuqu\u00e9n",
+    "22": "R\u00edo Negro",
+    "10": "Salta",
+    "11": "San Juan",
+    "12": "San Luis",
+    "23": "Santa Cruz",
+    "13": "Santa Fe",
+    "14": "Santiago del Estero",
+    "24": "Tierra del Fuego",
+    "15": "Tucum\u00e1n"
+}
+let arr = Object.keys(obj).map ( key => [key, obj[key]] ).sort ( (a, b) => a[1].localeCompare(b[1]) );
+console.log(arr)
+ </script>
+</body>
+</html>

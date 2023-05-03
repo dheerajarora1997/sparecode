@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <link rel="stylesheet" href="https://uat2.npfs.co/css/bootstrap.min.css?1664876840">
+ <link rel="stylesheet" href="https://uat2.npfs.co/css/bootstrap-datepicker.css?1664876840">
+ <link rel="stylesheet" href="https://uat2.npfs.co/css/bootstrap-datetimepicker.css?1664876840">
+ <link rel="stylesheet" href="https://uat2.npfs.co/css/daterangepicker.css?1664876840">
+</head>
+
+<body>
+ <div class="container">
+  <div class="row">
+   <div class="col-sm-3">
+    <h3>Date Time Picker</h3>
+    <input type="text" class="form-control datetimepicker" data-type="DD/MM/YYYY HH:mm:ss">
+   </div>
+   <div class="col-sm-3">
+    <h3>Date Picker</h3>
+    <input type="text" class="form-control datepicker" data-type="DD/MM/YYYY">
+   </div>
+   <div class="col-sm-3">
+    <h3>Only Time Picker</h3>
+    <input type="text" value="10:10:10" class="form-control datetimepicker onlyTimePicker" data-type="HH:mm:ss">
+   </div>
+   <!-- <div class="col-sm-6">
+    <h3>Date Range Picker</h3>
+    <input type="text" class="form-control daterangepicker">
+   </div>
+   <div class="col-sm-4">
+    <h3>Date Time Picker</h3>
+    <input type="text" class="form-control datetimepicker">
+   </div> -->
+
+  </div>
+ </div>
+
+ <script src="https://uat2.npfs.co/js/lib/jquery.min.js"></script>
+ <script src="https://uat2.npfs.co/js/bootstrap.min.js"></script>
+ <script src="https://uat2.npfs.co/js/college/datemoment.js"></script>
+ <script src="https://uat2.npfs.co/js/college/moment.js"></script>
+ <script src="https://uat2.npfs.co/js/college/bootstrap-datetimepicker.min.js"></script>
+ <script src="https://uat2.npfs.co/js/bootstrap-datepicker.js"></script>
+ <script>
+  // $('.datetimepicker.onlyTimePicker').datetimepicker('destroy')
+  // $('.datetimepicker:not(.onlyTimePicker)').datetimepicker();
+  // $('.datetimepicker.onlyTimePicker').datetimepicker({format: 'HH:mm:ss'});
+  // $('.datepicker').datepicker();
+  // $('.daterangepicker').daterangepicker();
+
+  $(document).ready(function(){
+   $('input').map((index, element)=>{
+    console.log(element)
+    let type = $(element).data('type');
+    if (type == 'DD/MM/YYYY HH:mm:ss'){
+     $(element).datetimepicker({format: type});
+    }
+    else if(type == 'DD/MM/YYYY'){
+     $(element).datepicker();
+    }
+    else if(type == 'HH:mm:ss'){
+     $(element).datetimepicker({format: type});
+    }
+   })
+
+  });
+ </script>
+</body>
+
+</html>

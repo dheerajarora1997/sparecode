@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+
+<body>
+ <pre>
+
+ </pre>
+ // set interval in react function component?
+const [data, setData] = useState([]);
+const mountedRef = useRef(null);
+
+useEffect(() => {
+  mountedRef.current = true;
+
+  return () => {
+    mountedRef.current = false;
+  };
+}, []);
+
+useEffect(async () => {
+  const interval = setInterval(async () => {
+    if (localStorage.getItem("loggedInUser")){
+      console.log("Logged in user:", new Date());
+
+      try {
+        const data = await getData();
+
+        if (data && mountedRef.current) {
+          setData(data);
+          console.log("data", data);
+        }
+      } catch(err) {
+        if (mountedRef.current)  console.log("err", err);
+      }
+    }
+  }, 5000);
+  return () => clearInterval(interval);
+}, []);
+
+
+
+const [data, setData] = useState([]);
+const mountedRef = useRef(null);
+
+useEffect(() => {
+  mountedRef.current = true;
+
+  return () => {
+    mountedRef.current = false;
+  };
+}, []);
+
+useEffect(async () => {
+  const interval = setInterval(async () => {
+    if (localStorage.getItem("loggedInUser")){
+      console.log("Logged in user:", new Date());
+
+      try {
+        const data = await getData();
+
+        if (data && mountedRef.current) {
+          setData(data);
+          console.log("data", data);
+        }
+      } catch(err) {
+        if (mountedRef.current)  console.log("err", err);
+      }
+    }
+  }, 5000);
+  return () => clearInterval(interval);
+}, []);
+
+
+
+
+
+ // function component to pause timer in React?
+class Controls extends React.Component{
+    state={
+        myInterval : null
+    }
+    startTimer = () => {
+        this.setState({myInterval : setInterval(this.props.countDown,1000)})
+    }
+    stopTimer = () => {
+        clearInterval(this.state.myInterval)
+    }
+    render(){
+        return(
+            <div>
+                <button onClick={this.startTimer}>Start</button>
+                <button onClick={this.stopTimer}>Stop</button>
+                {this.props.time}
+            </div>
+        )
+    }
+}
+
+
+class App extends React.Component{
+    state ={
+        time: 25*60*1000
+    }
+    countDown = () => {
+        this.setState({
+            time : this.state.time-1000,
+        })
+    }
+
+    render(){
+        return <Controls time={this.state.time} countDown={this.countDown}/>
+    }
+}
+
+
+
+
+
+ReactDOM.render(
+  <App />,
+  document.getElementById("react")
+);
+
+<div id='react'></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.6.3/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.6.3/umd/react-dom.production.min.js"></script>
+
+class Controls extends React.Component{
+    state={
+        myInterval : null,
+        time: 25*60*1000
+    }
+    countDown = () => {
+        this.setState({
+            time : this.state.time-1000,
+        })
+    }
+    startTimer = () => {
+        this.setState({myInterval : setInterval(this.countDown,1000)})
+    }
+    stopTimer = () => {
+        clearInterval(this.state.myInterval)
+    }
+    render(){
+        return(
+            <div>
+                <button onClick={this.startTimer}>Start</button>
+                <button onClick={this.stopTimer}>Stop</button>
+                {this.state.time}
+            </div>
+        )
+    }
+}
+
+
+class App extends React.Component{
+    render(){
+        return <Controls/>
+    }
+}
+
+
+
+
+
+ReactDOM.render(
+  <App />,
+  document.getElementById("react")
+);
+
+<div id='react'></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.6.3/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.6.3/umd/react-dom.production.min.js"></script>
+
+
+
+ // a running-clock that will count down time until it reaches 0 minutes and 0 seconds in function component React?
+class Example extends React.Component {
+  constructor() {
+    super();
+    this.state = { time: {}, seconds: 5 };
+    this.timer = 0;
+    this.startTimer = this.startTimer.bind(this);
+    this.countDown = this.countDown.bind(this);
+  }
+
+  secondsToTime(secs){
+    let hours = Math.floor(secs / (60 * 60));
+
+    let divisor_for_minutes = secs % (60 * 60);
+    let minutes = Math.floor(divisor_for_minutes / 60);
+
+    let divisor_for_seconds = divisor_for_minutes % 60;
+    let seconds = Math.ceil(divisor_for_seconds);
+
+    let obj = {
+      "h": hours,
+      "m": minutes,
+      "s": seconds
+    };
+    return obj;
+  }
+
+  componentDidMount() {
+    let timeLeftVar = this.secondsToTime(this.state.seconds);
+    this.setState({ time: timeLeftVar });
+  }
+
+  startTimer() {
+    if (this.timer == 0 && this.state.seconds > 0) {
+      this.timer = setInterval(this.countDown, 1000);
+    }
+  }
+
+  countDown() {
+    // Remove one second, set state so a re-render happens.
+    let seconds = this.state.seconds - 1;
+    this.setState({
+      time: this.secondsToTime(seconds),
+      seconds: seconds,
+    });
+    
+    // Check if we're at zero.
+    if (seconds == 0) { 
+      clearInterval(this.timer);
+    }
+  }
+
+  render() {
+    return(
+      <div>
+        <button onClick={this.startTimer}>Start</button>
+        m: {this.state.time.m} s: {this.state.time.s}
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Example/>, document.getElementById('View'));
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.min.js"></script>
+<div id="View"></div>
+
+
+ <script>
+  // adds type validation to an object in javascript?
+  function checkingInitialType(object) {
+   for (key in object) {
+    if (key.indexOf('_') !== -1) {
+     if (key.includes('string')) {
+      console.log(object[key]);
+      if (typeof (object[key]) != 'string') {
+       throw Error;
+      }
+     } else if (key.includes('int') || key.includes('float') || key.includes('number')) {
+      console.log(object[key]);
+      if (typeof (object[key]) != 'number') {
+       throw Error;
+      } else if (key.includes('int')) {
+       if (Number.isInteger(object[key])) {
+        console.log("true");
+       } else {
+        throw Error;
+       }
+      } else if (key.includes('float')) {
+       if (Number.isInteger(object[key])) {
+        throw Error;
+       } else {
+        console.log("true");
+       }
+      }
+     } else if (key.includes('bool')) {
+      if (typeof (object[key]) != 'boolean') {
+       throw Error;
+      }
+     } else if (typeof (object[key] == 'object')) {
+      console.log('object' + " " + object[key]);
+     } else {
+      return object;
+     }
+    } else {
+     return object;
+    }
+   }
+   return object;
+  }
+
+  const obj = {
+   age_int: 2,
+   name_string: "Adam",
+   job: null,
+  }
+
+  const handler2 = {
+   set(target, property, value) {
+    if (property.indexOf('_') !== -1) {
+     if (property.indexOf('string') !== -1) {
+      if (typeof (value) != 'string') {
+       throw Error;
+      }
+     } else if (property.indexOf('int') !== -1 || property.indexOf('float') !== -1 || property.indexOf('number') !== -1) {
+      if (typeof (value) != 'number') {
+       throw Error;
+      } else if (property.indexOf('int') !== -1) {
+       if (Number.isInteger(value)) {
+        console.log("true");
+       } else {
+        throw Error;
+       }
+      } else if (property.indexOf('float') !== -1) {
+       if (Number.isInteger(value)) {
+        throw Error;
+       } else {
+        console.log("true");
+       }
+      }
+     } else if (property.indexOf('bool') !== -1) {
+      if (typeof (value) != 'boolean') {
+       throw Error;
+      }
+     }
+     return target[property] = value
+    } else {
+     return target[property] = value
+    }
+
+   }
+  }
+
+  function typeCheck(obj) {
+   const initialObj = checkingInitialType(obj)
+   const proxy = new Proxy(initialObj, handler2);
+   return proxy;
+  }
+
+  module.exports = typeCheck;
+
+
+
+ </script>
+</body>
+
+</html>

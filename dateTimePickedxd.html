@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.14/jquery.datetimepicker.min.css">
+ <link rel="stylesheet" href="https://uat-bkndcdn.npfs.co/static/theme/v1/css/main.css">
+ <link rel="stylesheet" href="https://uat-bkndcdn.npfs.co/static/theme/v1/css/user-permissions.css">
+</head>
+
+<body>
+ <div class="col-4">
+  <div class="form-group">
+   
+  </div>
+ </div>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://uat-bkndcdn.npfs.co/static/theme/v1/js/plugins/moment.min.js"></script>
+ <script src="https://uat-bkndcdn.npfs.co/static/theme/v1/js/jquery.datetimepicker.full.js"></script>
+ <script>
+  let dtpInitNew = (timePickerBoolean,formatTime) => {
+    $('input.date-picker').datetimepicker({
+      maxDate: moment(),
+      format: 'd/m/Y',
+      formatTime: formatTime,
+      timepicker: timePickerBoolean,
+    });
+  }
+  dtpInitNew(false);
+ </script>
+</body>
+
+</html>

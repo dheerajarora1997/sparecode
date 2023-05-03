@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta3/css/bootstrap-select.min.css" />
+  <style>
+    .dropdown.bootstrap-select ul.dropdown-menu li.last-element-fixed {
+      bottom: 0;
+      position: sticky !important;
+    }
+
+    .dropdown.bootstrap-select ul.dropdown-menu li.last-element-fixed a {
+      display: flex;
+      font-weight: 500;
+      align-items: center;
+      justify-content: center;
+      box-shadow: none !important;
+      color: #000 !important;
+      background: #f1f1f1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row" id="checkbox-group">
+      <div class="col">
+        <label for="in_progress_on">
+          <input type="checkbox" name="in_progress_on" id="in_progress_on" value="in_progress_on" onclick="getToggleValue(this)">
+          in_progress_on
+        </label>
+      </div>
+      <div class="col">
+        <label for="verified_on">
+          <input type="checkbox" name="verified_on" id="verified_on" value="verified_on" onclick="getToggleValue(this)">
+          verified_on
+        </label>
+      </div>
+      <div class="col">
+        <label for="not_verified_on">
+          <input type="checkbox" name="not_verified_on" id="not_verified_on" value="not_verified_on" onclick="getToggleValue(this)">
+          not_verified_on
+        </label>
+      </div>
+      <div class="col">
+        <label for="not_applicable_on">
+          <input type="checkbox" name="not_applicable_on" id="not_applicable_on" value="not_applicable_on" onclick="getToggleValue(this)">
+          not_applicable_on
+        </label>
+      </div>
+      <div class="col">
+        <label for="reuploaded_on">
+          <input type="checkbox" name="reuploaded_on" id="reuploaded_on" value="reuploaded_on" onclick="getToggleValue(this)">
+          reuploaded_on
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-4">
+        <select class="getOptionData" id="option-one" name="default_status" onchange="" disabled>
+        </select>
+      </div>
+      <div class="col-4">
+        <select class="getOptionData" id="option-two" name="reupload_on" onchange="" multiple>
+        </select>
+      </div>
+      <div class="col-4">
+        <select class="getOptionData" id="option-three" name="remark_on" onchange="" multiple>
+        </select>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta3/js/bootstrap-select.min.js"></script>
+
+  <script>
+    $('select').selectpicker();
+
+    function getToggleValue(e) {
+      console.log(e);
+      var Status = ''
+      enableStatus = $(e).attr('name')
+      if (enableStatus == 'in_progress_on') {
+        enableStatus = 'In Progress'
+      } else if (enableStatus == 'verified_on') {
+        enableStatus = 'Verified'
+      } else if (enableStatus == 'not_verified_on') {
+        enableStatus = 'Not Verified'
+      } else if (enableStatus == 'not_applicable_on') {
+        enableStatus = 'Not Applicable'
+      } else if (enableStatus == 'reuploaded_on') {
+        enableStatus = 'Reuploaded'
+      }
+      if ($(e).is(':checked')) {
+        Status = $(e).is(':checked');
+      }
+      var opt = '';
+      if (Status == true) {
+        $('select.getOptionData').html('');
+        opt += '<option value="' + enableStatus + '">' + enableStatus + '</option>';
+        $('select.getOptionData').append(opt);
+        $('select.getOptionData').prop('disabled', false);
+        
+      } else if (Status == '') {
+        $('select.getOptionData option[value="' + enableStatus + '"]').remove();
+        if ($('select.getOptionData option').length == 0) {
+          $('select.getOptionData').prop('disabled', true);
+        }
+      }
+      $('select.getOptionData').val('');
+      $('select.getOptionData').selectpicker('refresh');
+      $('select.getOptionData').selectpicker('render');
+    }
+
+    function disableSelectedOptions() {
+      var selectedOption = $(".disableSelectedOption").map(function () {      // Get the selected options of all positions
+        return $(this).val();
+      }).get();
+      $(".disableSelectedOption option").removeAttr("disabled");         // set all enabled
+      $(".disableSelectedOption option:not(:selected):not([value='Select Form Fields'])").each(function () {  // Disable selected options in other positions
+        if ($.inArray($(this).val(), selectedOption) != -1) {
+          $(this).attr('disabled', true);
+          $('select.disableSelectedOption').selectpicker('refresh');
+        }
+      });
+    }
+
+    $('select[name="default_status"]').on('change', function () {
+      $('select[name="reupload_on"] option, select[name="remark_on"] option').prop('disabled', false)
+      let selectedOption = $(this).val();
+
+      if ($('select[name="reupload_on"]').val() === selectedOption) {
+        $('select[name="reupload_on"]').val('');
+      }
+      $('select[name="reupload_on"] option[value="' + selectedOption + '"]').prop('disabled', true);
+      $('select[name="reupload_on"] option[value="' + selectedOption + '"]').prop('selected', false);
+
+      if ($('select[name="remark_on"]').val() === selectedOption) {
+        $('select[name="remark_on"]').val('');
+      }
+      $('select[name="remark_on"] option[value="' + selectedOption + '"]').prop('disabled', true);
+      $('select[name="remark_on"] option[value="' + selectedOption + '"]').prop('selected', false);
+
+      $('select.selectpicker').selectpicker('refresh');
+      $('select.selectpicker').selectpicker('render');
+
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+[
+  {
+    "ticketID": 1022481,
+    "applicantId": 334455,
+    "firstName": "name here",
+    "lastName": "last name",
+    "emailAdress": "test76444@yopmail.com",
+    "mobileNo": "+91-8888888888",
+    "course": "Post Graduate Programs",
+    "program": "Master's in Bu",
+    "leadStage": "Hot",
+    "applicationStage": "Hot",
+    "assignTo": "Bhagyalakshmi",
+    "assigneeRole": "Counsellor",
+    "status": "In Progress",
+    "created On": "1656598196",
+    "visibility": "Read",
+    "category": {
+      "categoryName": "Admission Query",
+      "subCategory": "Eligibility Criteria"
+    },
+    "conversation": [
+      {
+        "msgId": "1022481_",
+        "message": "Hi from aplicant",
+        "sentTime": 1656598196,
+        "sender_id": 334455,
+        "ticketStatus": "open",
+        "counsellor": "Read",
+        "markedBy": ""
+      },
+      {
+        "msgId": "1022481_",
+        "message": "Hi, Counsellor this side",
+        "sentTime": 1656598196,
+        "sender_id": 4531234,
+        "ticketStatus": "open",
+        "counsellor": "Read",
+        "markedBy": ""
+      },
+      {
+        "msgId": "1022481_",
+        "message": "How can i help?",
+        "sentTime": 1656598196,
+        "sender_id": 4531234,
+        "ticketStatus": "open",
+        "counsellor": "Read",
+        "markedBy": ""
+      }
+    ]
+  }
+]

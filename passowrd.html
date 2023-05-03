@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Password</title>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+
+<body>
+ <input type="text" id="myInput">
+ <span> encryption </span>
+ <span id="encryptionId"> encryption </span>
+
+ <script>
+  let input = document.getElementById('myInput');
+  input.addEventListener("keyup", function (evt) {
+   let inputValue = this.value;
+   let hash = CryptoJS.MD5(inputValue);
+   document.getElementById('encryptionId').innerHTML = hash;
+  }, false);
+ </script>
+</body>
+
+</html>
