@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Animo js example</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animo.js/1.0.3/animate-animo.min.css" />
+</head>
+
+<body>
+ <section class="py-5 jumbotron border bg-primary">
+  <div class="py-5">0</div>
+ </section>
+ <section class="py-5 jumbotron border bg-secondary">
+  <div class="py-5">0</div>
+ </section>
+ <section class="py-5 jumbotron border bg-success">
+  <div class="py-5">0</div>
+ </section>
+ <section class="py-5 jumbotron border bg-danger">
+  <div class="py-5">0</div>
+ </section>
+ <section class="py-5 jumbotron border bg-info">
+  <div class="py-5">0</div>
+ </section>
+ <section class="py-5 jumbotron border bg-warning">
+  <div class="py-5">0</div>
+ </section>
+ <section class="py-5 jumbotron border bg-light">
+  <div class="py-5">0</div>
+ </section>
+ <section class="py-5 jumbotron border bg-dark">
+  <div class="py-5">0</div>
+ </section>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/animo.js/1.0.3/animo.min.js"></script>
+ <script>
+  animate(document.querySelector('.jumbotron'), {
+   classNames: ['animated', 'bounce']
+  })
+   .then(function () {
+    /* ... */
+   })
+   .catch(function (err) {
+    /* ... */
+   })
+
+ </script>
+</body>
+
+</html>

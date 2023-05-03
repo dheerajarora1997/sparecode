@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.sumoselect/3.4.5/sumoselect.css" /> -->
+  <!-- <script src="https://cdn.ckeditor.com/4.17.2/basic/ckeditor.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- <script src="https://cdn.ckeditor.com/4.17.2/standard/full.js"></script> -->
+  <!-- <script src="https://ckeditor.com/latest/samples/toolbarconfigurator/js/fulltoolbareditor.js"></script>
+  <script src="https://ckeditor.com/latest/samples/toolbarconfigurator/js/toolbarmodifier.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.sumoselect/3.4.5/jquery.sumoselect.min.js"></script> -->
+  <style>
+    .cke_reset.cke_contents {
+      border: none;
+      /* height: 110px !important; */
+    }
+
+    .block-big .cke_reset.cke_contents {
+      /* height: auto !important; */
+    }
+
+    .block-big .cke_reset.cke_contents{
+      /* height: 215px !important; */
+      /* max-height: 215px !important; */
+    }
+  </style>
+</head>
+
+<body>
+  <button onclick="enableEdit()">Enable</button>
+  <textarea name="" id="editor"></textarea>
+  <textarea name="" id="editor1"></textarea>
+  <script src="https://cdn.ckeditor.com/4.17.2/standard/ckeditor.js"></script>
+  <script>
+    // CKEDITOR.replace('editor');
+    CKEDITOR.replace('editor', {
+      removeButtons: 'Source,Image,Anchor,Table,SpecialChar',
+      // height: 500,
+      // resize_enabled: false,
+      // readOnly: true,
+    });
+    CKEDITOR.replace('editor1', {});
+
+    CKEDITOR.on('instanceReady', function (ev) {
+      ev.editor.on('maximize', function (evt) {
+        if (evt.data == 1) {
+          $('body').addClass('block-big');
+        }
+        else {
+          $('body').removeClass('block-big');
+        }
+      });
+    });
+    const enableEdit = () => {
+      CKEDITOR.instances['editor'].setReadOnly(false);
+    }
+  </script>
+</body>
+
+</html>

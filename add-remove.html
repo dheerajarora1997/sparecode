@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+
+<body>
+ <div class="form-group mt-0 pt-0 limit-counter">
+  <div class="input-group border-bottom">
+   <button
+    class="input-group-prepend px-1 py-1 btn bg-transparent text-dark shadow-none border-0 rounded-0 d-flex justify-content-center align-items-center"
+    onclick="limitCounter(this, 'dec')">
+    <span class="material-icons-outlined"> remove </span>
+   </button>
+   <input type="number" class="form-control" value="5" min="1" max="500" data-counter="5" />
+   <button
+    class="input-group-prepend px-1 py-1 btn bg-transparent text-dark shadow-none border-0 rounded-0 d-flex justify-content-center align-items-center"
+    onclick="limitCounter(this, 'inc')">
+    <span class="material-icons-outlined"> add </span>
+   </button>
+  </div>
+ </div>
+
+ <script>
+  const limitCounter = (element, counter) => {
+
+   let currentValue = element.closest('.limit-counter').querySelector('input').value;
+   let counterValue = element.closest('.limit-counter').querySelector('input').dataset.counter;
+
+   if (counter == 'inc') {
+    element.closest('.limit-counter').querySelector('input').value = Number(currentValue) + Number(counterValue);
+
+   } else if (counter == 'dec') {
+    element.closest('.limit-counter').querySelector('input').value = Number(currentValue) - Number(counterValue);
+   }
+
+   let maxLimit = element.closest('.limit-counter').querySelector('input').max;
+   let minLimit = element.closest('.limit-counter').querySelector('input').min;
+   currentValue = element.closest('.limit-counter').querySelector('input').value;
+
+
+   if (Number(maxLimit) && Number(currentValue) >= Number(maxLimit)) {
+    element.closest('.limit-counter').querySelectorAll('button').forEach(btn => {
+     btn.removeAttribute("disabled");
+    });
+    element.setAttribute("disabled", true);
+   } else if (Number(minLimit) && Number(currentValue) <= Number(minLimit)) {
+    element.closest('.limit-counter').querySelectorAll('button').forEach(btn => {
+     btn.removeAttribute("disabled");
+    });
+    element.setAttribute("disabled", true);
+   } else {
+    element.closest('.limit-counter').querySelectorAll('button').forEach(btn => {
+     btn.removeAttribute("disabled");
+    });
+   }
+   console.log(maxLimit, minLimit, currentValue)
+
+  }
+ </script>
+</body>
+
+</html>

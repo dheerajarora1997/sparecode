@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width">
+ <title>Set Clear Interval</title>
+</head>
+
+<body>
+ <button type="button" onclick="startInterval()">Start Interval</button>
+ <button type="button" onclick="endInterval()">Clear Interval</button>
+ <span id="typing">Typing...</span>
+ <script>
+  let typing = document.getElementById('typing')
+
+  const intervalFun = () => {
+   if (typing.innerHTML == 'Typing.') {
+    typing.innerHTML = 'Typing..'
+   }
+   else if (typing.innerHTML == 'Typing..') {
+    typing.innerHTML = 'Typing...'
+   }
+   else if (typing.innerHTML == 'Typing...') {
+    typing.innerHTML = 'Typing.'
+   }
+  }
+
+  let intervalId = null;
+
+  const startInterval = () => {
+   intervalId = setInterval(intervalFun, 500)
+  }
+  const endInterval = () => {
+   clearInterval(intervalId);
+  }
+ </script>
+
+</body>
+
+</html>

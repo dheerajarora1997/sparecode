@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.14/jquery.datetimepicker.min.css">
+</head>
+
+<body>
+
+  <div class="row">
+    <div class="col-4"><input type="text" class="datetimepicker" data-date-format="Y"></div>
+    <!-- <div class="col-4"><input type="text" class="datetimepicker" data-date-format="m/y"></div>
+    <div class="col-4"><input type="text" class="datetimepicker" data-date-format="d/m/y"></div>
+    <div class="col-4"><input type="text" class="datetimepicker" data-date-format="d/m/y"></div>
+    <div class="col-4"><input type="text" class="datetimepicker" data-date-format="d/m/y H:i"></div>
+    <div class="col-4"><input type="text" class="datetimepicker" data-date-format="d/m/y h:i a"></div> -->
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+  <script src="https://uat2-bkndcdn.npfs.co/static/theme/v1/js/jquery.datetimepicker.full.js"></script>
+  <script>
+
+    $('.datetimepicker[data-date-format]').map((index, el) => {
+      let dateFormat = $(el).attr('data-date-format');
+      $(el).attr('placeholder', dateFormat);
+      $(el).datetimepicker({
+        format: dateFormat,
+        timepicker: false,
+        onChangeDateTime: function (dp, $input) {
+          // alert($input.val())
+          console.log($input.val())
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
