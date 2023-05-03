@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+    <select name="" id="myOptions" multiple="multiple">
+        <option>About</option>
+        <option>Base</option>
+        <option>Blog</option>
+        <option>Contact </option>
+        <option>Custom</option>
+        <option>Support</option>
+        <option>Tools</option>
+    </select>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+
+    <script>
+        function filterFunction() {
+            var input, filter, ul, li, option, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("permission-accordion");
+            option = div.querySelectorAll("label.text-muted");
+            console.log(Opportunities)
+            for (i = 0; i < option.length; i++) {
+                txtValue = option[i].textContent || option[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    option[i].style.display = "";
+                } else {
+                    option[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

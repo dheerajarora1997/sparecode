@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <script>
+  let obj = [
+   {
+    "module_name": "Application Manager",
+    "sub_modules": {
+     "sub_modules_1": {
+      "name": "Bulk Offline Upload",
+      "package": {
+       "Starter": false,
+       "Pro": true,
+       "Growth": true,
+       "Enterprise": null,
+      }
+
+     },
+     "sub_modules_2": {
+      "name": "Application Upload",
+      "package": {
+       "Starter": false,
+       "Pro": true,
+       "Growth": true,
+       "Enterprise": null,
+      }
+
+     },
+     "sub_modules_3": {
+      "name": "Application Update",
+      "package": {
+       "Starter": true,
+       "Pro": true,
+       "Growth": true,
+       "Enterprise": null,
+      }
+     },
+    }
+   }
+  ];
+
+  console.table(obj[0].sub_modules)
+  table = document.createElement('table')
+  document.getElementById('app').append(table)
+ </script>
+</head>
+
+<body>
+ <div id="app"></div>
+
+</body>
+
+</html>

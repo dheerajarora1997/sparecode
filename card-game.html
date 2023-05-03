@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Card Game</title>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+ <style>
+  .trump-wrapper{min-height:calc(100vh - 20px);margin-top:10px;overflow:hidden;overflow-y:auto}.trump-card{perspective:1000px}.trump-card-inner{position:relative;width:100%;height:100%;text-align:center;transition:transform .6s;transform-style:preserve-3d;box-shadow:inset 0 0 14px rgba(0,0,0,.125)}.trump-card-back,.trump-card.active .trump-card-inner,.trump-card.disabled .trump-card-inner{transform:rotateY(180deg)}.trump-card.disabled{pointer-events: none; opacity: .6;}.trump-card-back,.trump-card-front{background-color:#ff5637;display:flex;border-radius:4px;box-shadow:0 0 14px rgba(0,0,0,.125)}.trump-card-back,.trump-card-front{position:absolute;width:100%;height:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden;}.trump-card-front{color:#000;justify-content:center;align-items:center}.trump-card-back{color:#fff;justify-content:center;align-items:center}.trump-card-back:after,.trump-card-front:before{content:'';background:url('https://dheerajarora1997.github.io/imageDrive/logo.png') center no-repeat #ff5637; background-size: 100px; position:absolute;top:0;left:0;width:100%;height:100%}.trump-card-back:after{background-color: #f1f1f1;}
+  @media only screen and (min-width: 769px){.trump-card-back,.trump-card-front{backface-visibility:hidden;-webkit-backface-visibility:hidden;}.trump-card{height:200px;}}
+  @media only screen and (max-width: 768px){ .trump-card .trump-card-inner .trump-card-front{z-index: 1;} .trump-card.active .trump-card-inner .trump-card-back{z-index: 2;}.trump-card{height:130px;} }
+  .trump-card.disabled .trump-card-back:after{background-color: #ffd8d1;}
+  .trump-card[data-img='rYAfD'] .trump-card-back:after{background-image:url('https://dheerajarora1997.github.io/imageDrive/1.png')}
+  .trump-card[data-img='NMmRh'] .trump-card-back:after{background-image:url('https://dheerajarora1997.github.io/imageDrive/2.png')}
+  .trump-card[data-img='ZTpEj'] .trump-card-back:after{background-image:url('https://dheerajarora1997.github.io/imageDrive/3.png')}
+  .trump-card[data-img='YGKGz'] .trump-card-back:after{background-image:url('https://dheerajarora1997.github.io/imageDrive/4.png')}
+  .trump-card[data-img='BsBX'] .trump-card-back:after{background-image:url('https://dheerajarora1997.github.io/imageDrive/5.png')}
+  .trump-card[data-img='USyKgr'] .trump-card-back:after{background-image:url('https://dheerajarora1997.github.io/imageDrive/6.png')}
+  .trump-card[data-img='pfALHo'] .trump-card-back:after{background-image:url('https://dheerajarora1997.github.io/imageDrive/7.png')}
+  .trump-card[data-img='ItSv'] .trump-card-back:after{background-image:url('https://dheerajarora1997.github.io/imageDrive/8.png')}
+  .trump-card[data-img='RFFwHB'] .trump-card-back:after{background-image:url('https://dheerajarora1997.github.io/imageDrive/9.png')}
+  .trump-card[data-img='hgblsI'] .trump-card-back:after{background-image:url('https://dheerajarora1997.github.io/imageDrive/10.png')}
+  .trump-card[data-img='EdFj'] .trump-card-back:after{background-image:url('https://dheerajarora1997.github.io/imageDrive/11.png')}
+  .trump-card[data-img='aizk'] .trump-card-back:after{background-image:url('https://dheerajarora1997.github.io/imageDrive/12.png')}
+  .trump-card[data-img='vxoby'] .trump-card-back:after{background-image:url('https://dheerajarora1997.github.io/imageDrive/13.png')}
+  .trump-card[data-img='pals0y'] .trump-card-back:after{background-image:url('https://dheerajarora1997.github.io/imageDrive/14.png')}
+  .trump-card[data-img='dbubo'] .trump-card-back:after{background-image:url('https://dheerajarora1997.github.io/imageDrive/15.png')}
+  .trump-card[data-img='qscyc'] .trump-card-back:after{background-image:url('https://dheerajarora1997.github.io/imageDrive/16.png')}
+  .trump-card[data-img='lavoj'] .trump-card-back:after{background-image:url('https://dheerajarora1997.github.io/imageDrive/17.png')}
+  .trump-card[data-img='gempH'] .trump-card-back:after{background-image:url('https://dheerajarora1997.github.io/imageDrive/18.png')}
+  /* .trump-card[data-img='tonwx'] .trump-card-back:after{background-image:url('https://dheerajarora1997.github.io/imageDrive/19.png')}
+  .trump-card[data-img='QXwnl'] .trump-card-back:after{background-image:url('https://dheerajarora1997.github.io/imageDrive/20.png')}
+  .trump-card[data-img='OiOS'] .trump-card-back:after{background-image:url('https://dheerajarora1997.github.io/imageDrive/21.png')}
+  .trump-card[data-img='aNmNa'] .trump-card-back:after{background-image:url('https://dheerajarora1997.github.io/imageDrive/22.png')} */
+  .running_time{position: fixed; right: 10px; top: 10px; padding: 10px; background-color: #ff5637; filter: grayscale(.1); min-width: 60px; min-height: 40px; color: #fff; z-index: 99; box-shadow: 0 0 10px rgba(0,0,0,.125);}
+ </style>
+</head>
+
+<body>
+ <div class="container">
+  <div class="running_time rounded">Seconds : 00</div>
+  <div class="bg-light rounded my-2 trump-wrapper p-2" id="app">
+   <div class="row justify-content-center align-items-center">
+    <div class="col-6 col-md-2">
+     <div class="trump-card rounded mb-3" onclick="flipCard(this)">
+      <div class="trump-card-inner">
+       <div class="trump-card-front">
+        Front
+       </div>
+       <div class="trump-card-back">
+        Back
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ <script>
+  confirm('Please match the card of the same type. Click Ok to continue...');
+  let openCard = [];
+  let trumpCard = document.querySelector('.trump-card').parentElement.outerHTML;
+  let uniqueCard = [{"key":0,"primaryImg":"rYAfD","category":"1919"},{"key":1,"primaryImg":"NMmRh","category":"1919"},{"key":2,"primaryImg":"ZTpEj","category":"1920"},{"key":3,"primaryImg":"YGKGz","category":"1920"},{"key":4,"primaryImg":"BsBX","category":"1921"},{"key":5,"primaryImg":"USyKgr","category":"1921"},{"key":6,"primaryImg":"pfALHo","category":"1922"},{"key":7,"primaryImg":"ItSv","category":"1922"},{"key":8,"primaryImg":"RFFwHB","category":"1923"},{"key":9,"primaryImg":"hgblsI","category":"1923"},{"key":10,"primaryImg":"EdFj","category":"1924"},{"key":11,"primaryImg":"aizk","category":"1924"},{"key":12,"primaryImg":"vxoby","category":"1925"},{"key":13,"primaryImg":"pals0y","category":"1925"},{"key":14,"primaryImg":"dbubo","category":"1926"},{"key":15,"primaryImg":"qscyc","category":"1926"},{"key":16,"primaryImg":"lavoj","category":"1927"},{"key":17,"primaryImg":"gempH","category":"1927"}];
+  let time = 0;
+
+  result = setInterval(() => {
+   time++;
+   console.log(`Hurry, Time is running out ${time > 9 ? time : '0'+time}`)
+   document.querySelector('.running_time').innerHTML = time < 9 ? `Seconds : 0${time}` : `Seconds : ${time}`;
+   if(document.querySelectorAll('.trump-card.disabled').length ==  document.querySelectorAll('.trump-card').length){
+     let userResponse = confirm(`You had taken ${time} seconds to match all the cards. Do you want to Restart?`);
+     if(userResponse){
+       location.reload();
+      }
+    clearInterval(result)
+   }
+  }, 1000);
+
+  // clearInterval(result)
+
+  for (i = 1; i <= 17; i++) {
+   document.querySelector('.row').innerHTML = document.querySelector('.row').innerHTML + trumpCard
+  }
+  allTrumpCard = document.querySelectorAll('.trump-card')
+  // console.log(allTrumpCard)
+  Array.from(allTrumpCard).map((element, index) => {
+    if(uniqueCard.length){
+      let number = Math.ceil(Math.random() * uniqueCard.length - 1)
+      element.dataset.key = uniqueCard[number].key;
+     element.dataset.img = uniqueCard[number].primaryImg;
+     element.dataset.category = uniqueCard[number].category;
+     uniqueCard.splice(number,1)
+    }
+  })
+
+
+  let flipCard = (card) => {
+   // console.log(card)
+   if (card.classList.contains('active')) {
+    card.classList.remove('active');
+    // console.log(card.dataset.key, card.dataset.img)
+    openCard.map((e, i) => {
+     if (e.key == card.dataset.key) {
+      openCard.splice(i, 1)
+     }
+    })
+   } else {
+    card.classList.add('active');
+    // console.log(card.dataset.key, card.dataset.img, card.dataset.category)
+    if (openCard.length == 2) { // change open card value
+     splice = openCard.splice(0, 1)
+    //  console.log(splice)
+    //  console.log(document.querySelector(`[data-key="${splice[0].key}"]`))
+     document.querySelector(`[data-key="${splice[0].key}"]`).classList.remove('active');
+    }
+    openCard.push({"key":card.dataset.key, "category": card.dataset.category})
+   }
+  //  console.log(openCard)
+   if(openCard[1]){
+     if(openCard[0].category == openCard[1].category){
+      // console.log(document.querySelector(`[data-key="${openCard[0].key}"]`), document.querySelector(`[data-key="${openCard[1].key}"]`))
+      document.querySelector('body').style.pointerEvents = 'none'
+
+      setTimeout(() => {
+        document.querySelector(`[data-key="${openCard[0].key}"]`).classList.add('disabled')
+        document.querySelector(`[data-key="${openCard[1].key}"]`).classList.add('disabled')
+        openCard = []
+        document.querySelector('body').style.pointerEvents = '';
+      }, 500);
+    }
+   }
+  }
+ </script>
+</body>
+
+</html>
+
+
+<!-- extra code  -->
+<!-- let uniqueCard = [{"key":0,"primaryImg":"rYAfD","category":"1919"},{"key":1,"primaryImg":"NMmRh","category":"1919"},{"key":2,"primaryImg":"ZTpEj","category":"1920"},{"key":3,"primaryImg":"YGKGz","category":"1920"},{"key":4,"primaryImg":"BsBX","category":"1921"},{"key":5,"primaryImg":"USyKgr","category":"1921"},{"key":6,"primaryImg":"pfALHo","category":"1922"},{"key":7,"primaryImg":"ItSv","category":"1922"},{"key":8,"primaryImg":"RFFwHB","category":"1923"},{"key":9,"primaryImg":"hgblsI","category":"1923"},{"key":10,"primaryImg":"EdFj","category":"1924"},{"key":11,"primaryImg":"aizk","category":"1924"},{"key":12,"primaryImg":"vxoby","category":"1925"},{"key":13,"primaryImg":"pals0y","category":"1925"},{"key":14,"primaryImg":"dbubo","category":"1926"},{"key":15,"primaryImg":"qscyc","category":"1926"},{"key":16,"primaryImg":"lavoj","category":"1927"},{"key":17,"primaryImg":"gempH","category":"1927"},{"key":18,"primaryImg":"tonwx","category":"1928"},{"key":19,"primaryImg":"QXwnl","category":"1928"},{"key":20,"primaryImg":"OiOS","category":"1929"},{"key":21,"primaryImg":"aNmNa","category":"1929"}]; -->

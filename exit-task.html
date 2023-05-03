@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Exit Indent</title>
+ <style>
+  .modal {
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 1060;
+   display: none;
+   width: 100%;
+   height: 100%;
+   overflow-x: hidden;
+   overflow-y: auto;
+   outline: 0;
+   transition: all ease-in-out .5s;
+  }
+
+  .modal.show {
+   display: block;
+  }
+
+  .modal-dialog {
+   max-width: 800px;
+   margin: 1.75rem auto;
+  }
+
+  @media only screen and (max-width: 767px) {
+   .modal-dialog {
+    max-width: 90%;
+   }
+  }
+
+  .modal-content {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   pointer-events: auto;
+   background-color: yellow;
+   background-clip: padding-box;
+   border: 1px solid rgba(0, 0, 0, .2);
+   border-radius: 0.3rem;
+   outline: 0;
+  }
+
+  .modal-body {
+   position: relative;
+   flex: 1 1 auto;
+   padding: 1rem;
+  }
+
+  .modal-backdrop {
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 1040;
+   width: 100vw;
+   height: 100vh;
+   background-color: rgba(0, 0, 0, .5);
+  }
+ </style>
+ <script>
+
+  let openPopup = () => {
+   modal = document.createElement('div')
+   modal.classList.add('modal', 'fade', 'show')
+   modal.id = "exit-popup";
+   modalDialog = document.createElement('div')
+   modalDialog.classList.add('modal-dialog')
+   modalContent = document.createElement('div')
+   modalContent.classList.add('modal-content')
+   modalBody = document.createElement('div')
+   modalBody.classList.add('modal-body')
+   modalContent.append(modalBody);
+   modalDialog.append(modalContent);
+   modal.append(modalDialog);
+   document.getElementsByTagName('body')[0].append(modal);
+
+   modalBackdrop = document.createElement('div')
+   modalBackdrop.classList.add('modal-backdrop', 'fade', 'show')
+   document.getElementsByTagName('body')[0].append(modalBackdrop);
+  }
+
+  // Exit Indent
+  window.addEventListener('beforeunload', function (event) {
+   event.preventDefault();
+   event.returnValue = false;
+   const confirmationMessage = 'Are you sure you want to leave?';
+   event.returnValue = confirmationMessage;
+   return confirmationMessage;
+  });
+
+  // Leave Indent
+  document.addEventListener('mouseout', e => {
+   if (!e.toElement && !e.relatedTarget) {
+    if (!document.getElementById('exit-popup')) openPopup();
+   }
+  });
+ </script>
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>
