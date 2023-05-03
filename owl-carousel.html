@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" />
+	<style>
+		.revolutionize-admission {
+			background-image: linear-gradient(to top, #e7f0f9, #f0f5fb, #fdfeff);
+			padding: 180px 0;
+		}
+
+		.revolutionize-admission .slide-container {
+			max-width: 456px;
+			position: relative;
+			margin: 0 auto;
+		}
+
+		.revolutionize-admission .slide-container .circle-round {
+			position: absolute;
+			width: 456px;
+			height: 456px;
+			border-radius: 50%;
+		}
+
+		.revolutionize-admission .slide-container .circle-round.centerImg {
+			font-size: 2rem;
+			line-height: 2.5rem;
+		}
+
+		.revolutionize-admission .slide-container .circle-round-cover {
+			width: 456px;
+			height: 456px;
+			overflow: hidden;
+		}
+
+		.revolutionize-admission .slide-container .steplist {
+			max-width: 350px;
+			top: 256px;
+			left: -390px;
+		}
+
+		.revolutionize-admission .slide-container .automatedApp {
+			max-width: 300px;
+			top: 140px;
+			left: -344px;
+		}
+
+		.revolutionize-admission .slide-container .autoCalculate {
+			max-width: 294px;
+			top: 13px;
+			left: -262px;
+		}
+
+		.revolutionize-admission .slide-container .autoGenerate {
+			max-width: 307px;
+			bottom: 31px;
+			right: -286px;
+		}
+
+		.revolutionize-admission .slide-container .instantaneousEng {
+			max-width: 300px;
+			bottom: -108px;
+			right: 70px;
+		}
+
+		.revolutionize-admission .slide-container .competitionSchool {
+			max-width: 340px;
+			bottom: 30px;
+			left: -200px;
+		}
+
+		.revolutionize-admission .slide-container .automationFee {
+			max-width: 325px;
+			top: 226px;
+			right: -365px;
+		}
+
+		.revolutionize-admission .slide-container .enquiryManager {
+			max-width: 271px;
+			top: 114px;
+			right: -305px;
+		}
+
+		.revolutionize-admission .slide-container .parentSentiment {
+			max-width: 315px;
+			top: 14px;
+			right: -280px;
+		}
+
+		.revolutionize-admission .slide-container .scaleReach {
+			max-width: 356px;
+			top: -112px;
+			left: 48px;
+		}
+
+		.revolutionize-admission .slide-container .why-uniapply-icon {
+			font-size: 1.6rem;
+			line-height: 13px;
+		}
+
+		.revolutionize-admission .slide-container .rounded-circle {
+			height: 53px;
+			width: 53px;
+			padding: 20px;
+			transition: all 0.1s ease-in-out;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
+		}
+
+		.revolutionize-admission .slide-container .highlightTextinfo {
+			color: #7a7a7a;
+		}
+
+		.revolutionize-admission .slide-container .highlightTextinfo:hover {
+			color: #000;
+		}
+
+		.revolutionize-admission .slide-container .highlightTextinfo:hover .rounded-circle {
+			transform: scale(1.25);
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) !important;
+		}
+
+		.revolutionize-admission .owl-carousel {
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 100%;
+			width: 100%;
+		}
+
+		.revolutionize-admission .owl-carousel .owl-stage-outer {
+			-webkit-transform: none;
+			width: 100%;
+			height: 100%;
+			overflow: inherit;
+		}
+
+		.revolutionize-admission .owl-carousel .owl-stage-outer .owl-stage {
+			width: 100% !important;
+			transform: none !important;
+			height: 100%;
+		}
+
+		.revolutionize-admission .owl-carousel .owl-stage-outer .owl-stage .owl-item {
+			height: 100%;
+			position: absolute;
+		}
+
+		.revolutionize-admission .owl-carousel .owl-stage-outer .owl-stage .owl-item.active .highlightTextinfo {
+			color: #000;
+		}
+
+		.revolutionize-admission .owl-carousel .owl-dots .owl-dot {
+			position: absolute;
+			transition: all 0.1s ease-in-out;
+		}
+
+		.revolutionize-admission .owl-carousel .owl-dots .owl-dot span {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.revolutionize-admission .owl-carousel .owl-dots .owl-dot span:before {
+			content: "";
+			background: #fff;
+			position: absolute;
+			display: block;
+			border-radius: 50%;
+			width: 65px;
+			/*box-shadow:0 0 10px rgba(0,0,0,0.1);
+	*/
+			height: 65px;
+			transition: all 0.1s ease-in-out;
+		}
+
+		.revolutionize-admission .owl-carousel .owl-dots .owl-dot span:after {
+			content: "";
+			background-repeat: no-repeat;
+			background-size: 40px 40px;
+			position: absolute;
+			width: 40px;
+			height: 40px;
+			display: block;
+			filter: grayscale(1);
+			transition: all 0.1s ease-in-out;
+		}
+
+		.revolutionize-admission .owl-carousel .owl-dots .owl-dot:hover span:before {
+			transform: scale(1.25);
+		}
+
+		.revolutionize-admission .owl-carousel .owl-dots .owl-dot:hover span:after {
+			background-size: 50px 50px;
+			width: 50px;
+			height: 50px;
+			filter: grayscale(0);
+		}
+
+		.revolutionize-admission .owl-carousel .owl-dots .owl-dot.active span:before {
+			transform: scale(1.25);
+		}
+
+		.revolutionize-admission .owl-carousel .owl-dots .owl-dot.active span:after {
+			background-size: 50px 50px;
+			width: 50px;
+			height: 50px;
+			filter: grayscale(0);
+		}
+
+		.revolutionize-admission .owl-carousel .owl-dots .owl-dot:nth-child(1) {
+			top: 5px;
+			left: 220px;
+		}
+
+		.revolutionize-admission .owl-carousel .owl-dots .owl-dot:nth-child(1) span:after {
+			background-image: url("https://cdn.uniapply.com/assets/v1/d/images/main/business/revolutionize/icon-Scale-your-Reach.svg");
+			margin-top: -7px;
+		}
+
+		.revolutionize-admission .owl-carousel .owl-dots .owl-dot:nth-child(2) {
+			top: 46px;
+			right: 84px;
+		}
+
+		.revolutionize-admission .owl-carousel .owl-dots .owl-dot:nth-child(2) span:after {
+			background-image: url("https://cdn.uniapply.com/assets/v1/d/images/main/business/revolutionize/icon-Parent-Sentiment-Index.svg");
+			width: 35px;
+			height: 35px;
+			background-size: 35px 35px;
+		}
+
+		.revolutionize-admission .owl-carousel .owl-dots .owl-dot:nth-child(2):hover span:after {
+			background-size: 40px 40px;
+			width: 40px;
+			height: 40px;
+		}
+
+		.revolutionize-admission .owl-carousel .owl-dots .owl-dot:nth-child(2).active span:after {
+			background-size: 40px 40px;
+			width: 40px;
+			height: 40px;
+		}
+
+		.revolutionize-admission .owl-carousel .owl-dots .owl-dot:nth-child(3) {
+			top: 151px;
+			right: 19px;
+		}
+
+		.revolutionize-admission .owl-carousel .owl-dots .owl-dot:nth-child(3) span:after {
+			background-image: url("https://cdn.uniapply.com/assets/v1/d/images/main/business/revolutionize/icon-Enquiry-Management.svg");
+		}
+
+		.revolutionize-admission .owl-carousel .owl-dots .owl-dot:nth-child(4) {
+			top: 269px;
+			right: 12px;
+		}
+
+		.revolutionize-admission .owl-carousel .owl-dots .owl-dot:nth-child(4) span:after {
+			background-image: url("https://cdn.uniapply.com/assets/v1/d/images/main/business/revolutionize/icon-Enquiry-Nurturing.svg");
+		}
+
+		.revolutionize-admission .owl-carousel .owl-dots .owl-dot:nth-child(5) {
+			top: 390px;
+			right: 70px;
+		}
+
+		.revolutionize-admission .owl-carousel .owl-dots .owl-dot:nth-child(5) span:after {
+			background-image: url("https://cdn.uniapply.com/assets/v1/d/images/main/business/revolutionize/icon-Enquiry-Conversion.svg");
+		}
+
+		.revolutionize-admission .owl-carousel .owl-dots .owl-dot:nth-child(6) {
+			bottom: 3px;
+			right: 218px;
+		}
+
+		.revolutionize-admission .owl-carousel .owl-dots .owl-dot:nth-child(6) span:after {
+			background-image: url("https://cdn.uniapply.com/assets/v1/d/images/main/business/revolutionize/icon-Maximize-the-ROI-of-your-Admission-Campaign.svg");
+		}
+
+		.revolutionize-admission .owl-carousel .owl-dots .owl-dot:nth-child(7) {
+			bottom: 53px;
+			left: 85px;
+		}
+
+		.revolutionize-admission .owl-carousel .owl-dots .owl-dot:nth-child(7) span:after {
+			background-image: url("https://cdn.uniapply.com/assets/v1/d/images/main/business/revolutionize/icon-Application-Automation.svg");
+		}
+
+		.revolutionize-admission .owl-carousel .owl-dots .owl-dot:nth-child(8) {
+			bottom: 163px;
+			left: 12px;
+		}
+
+		.revolutionize-admission .owl-carousel .owl-dots .owl-dot:nth-child(8) span:after {
+			background-image: url("https://cdn.uniapply.com/assets/v1/d/images/main/business/revolutionize/icon-Auto-Scoring-Merit-List-Generation.svg");
+		}
+
+		.revolutionize-admission .owl-carousel .owl-dots .owl-dot:nth-child(9) {
+			top: 171px;
+			left: 8px;
+		}
+
+		.revolutionize-admission .owl-carousel .owl-dots .owl-dot:nth-child(9) span:after {
+			background-image: url("https://cdn.uniapply.com/assets/v1/d/images/main/business/revolutionize/icon-Automated-Fee-Collection.svg");
+		}
+
+		.revolutionize-admission .owl-carousel .owl-dots .owl-dot:nth-child(10) {
+			top: 58px;
+			left: 81px;
+		}
+
+		.revolutionize-admission .owl-carousel .owl-dots .owl-dot:nth-child(10) span:after {
+			background-image: url("https://cdn.uniapply.com/assets/v1/d/images/main/business/revolutionize/icon-Mobile-App.svg");
+		}
+	</style>
+</head>
+
+<body>
+	<section class="revolutionize-admission wow fadeIn">
+		<div class="container">
+			<div class="slide-container">
+				<div class="circle-round-cover">
+					<div
+						class="circle-round text-center centerImg bg-white shadow-sm border border-light d-flex align-items-center justify-content-center">
+						<div class="px-5">
+							<span class="font-weight-bold d-block">Revolutionize</span> the entire admission<br />process for
+							your<br />school with
+						</div>
+					</div>
+				</div>
+				<div id="revolutionizeSlider" class="img_container owl-carousel owl-theme">
+					<div class="item">
+						<div class="scaleReach position-absolute text-center highlightTextinfo">
+							<div>
+								<span class="font-weight-bold font-1">Scale your Reach</span>
+								<p class="mb-0">Get discovered by qualified parents on UniApply.com Get 360 visibility and insights to
+									achieve your goals</p>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div
+							class="parentSentiment d-flex align-items-center justify-content-between position-absolute highlightTextinfo">
+							<div>
+								<span class="font-weight-bold font-1">Parent Sentiment Index</span>
+								<p class="mb-0">Gauge parent's interest and track their decision-making process</p>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div
+							class="enquiryManager d-flex align-items-center justify-content-between position-absolute highlightTextinfo">
+							<div>
+								<span class="font-weight-bold font-1">Enquiry Management</span>
+								<p class="mb-0">Centralise all enquiries of qualified parents from calls, website, social media and
+									offline at one place</p>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div
+							class="automationFee d-flex align-items-center justify-content-between position-absolute highlightTextinfo">
+							<div>
+								<span class="font-weight-bold font-1">Enquiry Nurturing</span>
+								<p class="mb-0">Inform, engage and nurture parents based on their profile. Communicate in a single-click
+									via Email, SMS and Whatsapp with pre-integrated templates</p>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div
+							class="autoGenerate d-flex align-items-center justify-content-between position-absolute highlightTextinfo">
+							<div>
+								<span class="font-weight-bold font-1">Enquiry Conversion</span>
+								<p class="mb-0">Know, track and optimise enquiry to enrolment rate with in-depth performance reports</p>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="instantaneousEng position-absolute text-center highlightTextinfo">
+							<div>
+								<span class="font-weight-bold font-1">Maximise ROI through Marketing Tools</span>
+								<p class="mb-0">Track, Measure and Optimize Marketing Campaigns for Admissions</p>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div
+							class="competitionSchool text-right d-flex align-items-center justify-content-between position-absolute highlightTextinfo">
+							<div>
+								<span class="font-weight-bold font-1 d-block pt-4">Application Automation</span>
+								<p class="mb-0">Acquire, manage and scale application</p>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div
+							class="steplist d-flex align-items-center justify-content-between position-absolute text-right highlightTextinfo">
+							<div>
+								<span class="font-weight-bold font-1">Auto Scoring & Merit List Generation</span>
+								<p class="mb-0">Review auto-generated score, ranks and merit-list based on your predefined metrics </p>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div
+							class="automatedApp d-flex align-items-center justify-content-between position-absolute text-right highlightTextinfo">
+							<div>
+								<span class="font-weight-bold font-1">Automated Fee Collection</span>
+								<p class="mb-0">Collect admission fees of enrolled students online</p>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div
+							class="autoCalculate position-absolute d-flex align-items-center justify-content-between text-right highlightTextinfo">
+							<div>
+								<span class="font-weight-bold font-1">Mobile App</span>
+								<p class="mb-0">Check the overall health of your admissions and empower teams to call, communicate and
+									manage enquiries on the go</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+	<script>
+		if ($('.revolutionize-admission').length > 0) {
+			$('#revolutionizeSlider').owlCarousel({
+				items: 1,
+				loop: false,
+				rewind: true,
+				margin: 0,
+				nav: false,
+				dots: true,
+				autoHeight: false,
+				navText: ["<span class='icon-back'></span>", "<span class='icon-next'></span>"],
+				lazyLoad: true,
+				autoplay: true,
+				autoplayTimeout: 4000,
+				autoplayHoverPause: true
+			});
+		}
+	</script>
+</body>
+
+</html>

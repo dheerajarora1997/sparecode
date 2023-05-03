@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+  <style>
+    .modal .modal-body {
+      overflow-y: auto;
+      max-height: 450px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="modal fade offCanvasModal right" id="permission-list-modal" role="dialog" tabindex="-1"
+    style="display: block;">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header border-bottom-blue">
+          <h5 class="modal-title my-0" id="exampleModalLabel"><span class="title font-weight-bold">Permission Set</span>
+          </h5><button aria-label="Close" class="close" data-container="body" data-dismiss="modal"
+            data-original-title="Click Here to Close" data-placement="left" data-toggle="tooltip" title=""
+            type="button"><span aria-hidden="true">×</span></button>
+        </div>
+        <div class="modal-body">
+          <div class="permission-set border-left">
+            <div id="view_permissions_div">
+              <div id="permission-accordion" class="modal-accordion">
+
+
+                <div data-id="3" data-group_id="1" class="permission_module_id">
+                  <a href="#module_1" data-toggle="collapse" class="py-3 border-bottom d-block text-dark collapsed"
+                    aria-expanded="true">Leads Manager</a>
+                  <div class="border-bottom collapse show" id="module_1" data-parent="#permission-accordion" style="">
+                    <div class="p-3" id="view_permissions_name_div_3">
+                      <p class="mb-2 text-secondary fs-12">Download Leads</p>
+                      <p class="mb-2 text-secondary fs-12">View Leads</p>
+                      <p class="mb-2 text-secondary fs-12">Offline Leads Upload Report</p>
+                      <p class="mb-2 text-secondary fs-12">Upload Bulk Leads</p>
+                      <p class="mb-2 text-secondary fs-12">Edit Standard Activities Lead Score</p>
+                      <p class="mb-2 text-secondary fs-12">Add Extended Activities Lead Score </p>
+                      <p class="mb-2 text-secondary fs-12">Edit Extended Activities Lead Score</p>
+                      <p class="mb-2 text-secondary fs-12">Remove Extended Activities</p>
+                      <p class="mb-2 text-secondary fs-12">View Leads Quick Snapshot</p>
+                      <p class="mb-2 text-secondary fs-12">Add Quick Lead</p>
+                      <p class="mb-2 text-secondary fs-12">Show additional details tab on Profile Page</p>
+                      <p class="mb-2 text-secondary fs-12">Download Activity Logs</p>
+                      <p class="mb-2 text-secondary fs-12">Agent Lead Response Logs</p>
+                      <p class="mb-2 text-secondary fs-12">Download Agent Lead Response Logs</p>
+                      <p class="mb-2 text-secondary fs-12">Assessments Score</p>
+                      <p class="mb-2 text-secondary fs-12">View Only CRM Applications</p>
+                      <p class="mb-2 text-secondary fs-12">Enable Lead Delete</p>
+                      <p class="mb-2 text-secondary fs-12">Create RA</p>
+                      <p class="mb-2 text-secondary fs-12">Paid RA Installment Amount</p>
+                      <p class="mb-2 text-secondary fs-12">RA Listing</p>
+                      <p class="mb-2 text-secondary fs-12">RA Assign</p>
+                      <p class="mb-2 text-secondary fs-12">Update Lead Campaign Data Bulk</p>
+                      <p class="mb-2 text-secondary fs-12">Show Count Column(s) in LM/AM</p>
+                      <p class="mb-2 text-secondary fs-12">Show First/Previous Lead Stage Column in LM/AM</p>
+                      <p class="mb-2 text-secondary fs-12">Download Counselling Sheet Button</p>
+                      <p class="mb-2 text-secondary fs-12">View as Lead</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div data-id="13" data-group_id="1" class="permission_module_id">
+                  <a href="#module_2" data-toggle="collapse" class="py-3 border-bottom d-block text-dark collapsed">Lead
+                    Nurturing/Counsellor Module</a>
+                  <div class="border-bottom collapse" id="module_2" data-parent="#permission-accordion">
+                    <div class="p-3" id="view_permissions_name_div_3">
+                      <p class="mb-2 text-secondary fs-12">Download Leads</p>
+                      <p class="mb-2 text-secondary fs-12">View Leads</p>
+                      <p class="mb-2 text-secondary fs-12">Offline Leads Upload Report</p>
+                      <p class="mb-2 text-secondary fs-12">Upload Bulk Leads</p>
+                      <p class="mb-2 text-secondary fs-12">Edit Standard Activities Lead Score</p>
+                      <p class="mb-2 text-secondary fs-12">Add Extended Activities Lead Score </p>
+                      <p class="mb-2 text-secondary fs-12">Edit Extended Activities Lead Score</p>
+                      <p class="mb-2 text-secondary fs-12">Remove Extended Activities</p>
+                      <p class="mb-2 text-secondary fs-12">View Leads Quick Snapshot</p>
+                      <p class="mb-2 text-secondary fs-12">Add Quick Lead</p>
+                      <p class="mb-2 text-secondary fs-12">Show additional details tab on Profile Page</p>
+                      <p class="mb-2 text-secondary fs-12">Download Activity Logs</p>
+                      <p class="mb-2 text-secondary fs-12">Agent Lead Response Logs</p>
+                      <p class="mb-2 text-secondary fs-12">Download Agent Lead Response Logs</p>
+                      <p class="mb-2 text-secondary fs-12">Assessments Score</p>
+                      <p class="mb-2 text-secondary fs-12">View Only CRM Applications</p>
+                      <p class="mb-2 text-secondary fs-12">Enable Lead Delete</p>
+                      <p class="mb-2 text-secondary fs-12">Create RA</p>
+                      <p class="mb-2 text-secondary fs-12">Paid RA Installment Amount</p>
+                      <p class="mb-2 text-secondary fs-12">RA Listing</p>
+                      <p class="mb-2 text-secondary fs-12">RA Assign</p>
+                      <p class="mb-2 text-secondary fs-12">Update Lead Campaign Data Bulk</p>
+                      <p class="mb-2 text-secondary fs-12">Show Count Column(s) in LM/AM</p>
+                      <p class="mb-2 text-secondary fs-12">Show First/Previous Lead Stage Column in LM/AM</p>
+                      <p class="mb-2 text-secondary fs-12">Download Counselling Sheet Button</p>
+                      <p class="mb-2 text-secondary fs-12">View as Lead</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div data-id="4" data-group_id="1" class="permission_module_id">
+                  <a href="#module_3" data-toggle="collapse" class="py-3 border-bottom d-block text-dark collapsed"
+                    aria-expanded="false">Application Manager</a>
+                  <div class="border-bottom collapse" id="module_3" data-parent="#permission-accordion" style="">
+                    <div class="p-3" id="view_permissions_name_div_3">
+                      <p class="mb-2 text-secondary fs-12">Download Leads</p>
+                      <p class="mb-2 text-secondary fs-12">View Leads</p>
+                      <p class="mb-2 text-secondary fs-12">Offline Leads Upload Report</p>
+                      <p class="mb-2 text-secondary fs-12">Upload Bulk Leads</p>
+                      <p class="mb-2 text-secondary fs-12">Edit Standard Activities Lead Score</p>
+                      <p class="mb-2 text-secondary fs-12">Add Extended Activities Lead Score </p>
+                      <p class="mb-2 text-secondary fs-12">Edit Extended Activities Lead Score</p>
+                      <p class="mb-2 text-secondary fs-12">Remove Extended Activities</p>
+                      <p class="mb-2 text-secondary fs-12">View Leads Quick Snapshot</p>
+                      <p class="mb-2 text-secondary fs-12">Add Quick Lead</p>
+                      <p class="mb-2 text-secondary fs-12">Show additional details tab on Profile Page</p>
+                      <p class="mb-2 text-secondary fs-12">Download Activity Logs</p>
+                      <p class="mb-2 text-secondary fs-12">Agent Lead Response Logs</p>
+                      <p class="mb-2 text-secondary fs-12">Download Agent Lead Response Logs</p>
+                      <p class="mb-2 text-secondary fs-12">Assessments Score</p>
+                      <p class="mb-2 text-secondary fs-12">View Only CRM Applications</p>
+                      <p class="mb-2 text-secondary fs-12">Enable Lead Delete</p>
+                      <p class="mb-2 text-secondary fs-12">Create RA</p>
+                      <p class="mb-2 text-secondary fs-12">Paid RA Installment Amount</p>
+                      <p class="mb-2 text-secondary fs-12">RA Listing</p>
+                      <p class="mb-2 text-secondary fs-12">RA Assign</p>
+                      <p class="mb-2 text-secondary fs-12">Update Lead Campaign Data Bulk</p>
+                      <p class="mb-2 text-secondary fs-12">Show Count Column(s) in LM/AM</p>
+                      <p class="mb-2 text-secondary fs-12">Show First/Previous Lead Stage Column in LM/AM</p>
+                      <p class="mb-2 text-secondary fs-12">Download Counselling Sheet Button</p>
+                      <p class="mb-2 text-secondary fs-12">View as Lead</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div data-id="6" data-group_id="1" class="permission_module_id">
+                  <a href="#module_4" data-toggle="collapse"
+                    class="py-3 border-bottom d-block text-dark collapsed">Campaign Manager</a>
+                  <div class="border-bottom collapse" id="module_4" data-parent="#permission-accordion">
+                    <div class="p-3" id="view_permissions_name_div_3">
+                      <p class="mb-2 text-secondary fs-12">Download Leads</p>
+                      <p class="mb-2 text-secondary fs-12">View Leads</p>
+                      <p class="mb-2 text-secondary fs-12">Offline Leads Upload Report</p>
+                      <p class="mb-2 text-secondary fs-12">Upload Bulk Leads</p>
+                      <p class="mb-2 text-secondary fs-12">Edit Standard Activities Lead Score</p>
+                      <p class="mb-2 text-secondary fs-12">Add Extended Activities Lead Score </p>
+                      <p class="mb-2 text-secondary fs-12">Edit Extended Activities Lead Score</p>
+                      <p class="mb-2 text-secondary fs-12">Remove Extended Activities</p>
+                      <p class="mb-2 text-secondary fs-12">View Leads Quick Snapshot</p>
+                      <p class="mb-2 text-secondary fs-12">Add Quick Lead</p>
+                      <p class="mb-2 text-secondary fs-12">Show additional details tab on Profile Page</p>
+                      <p class="mb-2 text-secondary fs-12">Download Activity Logs</p>
+                      <p class="mb-2 text-secondary fs-12">Agent Lead Response Logs</p>
+                      <p class="mb-2 text-secondary fs-12">Download Agent Lead Response Logs</p>
+                      <p class="mb-2 text-secondary fs-12">Assessments Score</p>
+                      <p class="mb-2 text-secondary fs-12">View Only CRM Applications</p>
+                      <p class="mb-2 text-secondary fs-12">Enable Lead Delete</p>
+                      <p class="mb-2 text-secondary fs-12">Create RA</p>
+                      <p class="mb-2 text-secondary fs-12">Paid RA Installment Amount</p>
+                      <p class="mb-2 text-secondary fs-12">RA Listing</p>
+                      <p class="mb-2 text-secondary fs-12">RA Assign</p>
+                      <p class="mb-2 text-secondary fs-12">Update Lead Campaign Data Bulk</p>
+                      <p class="mb-2 text-secondary fs-12">Show Count Column(s) in LM/AM</p>
+                      <p class="mb-2 text-secondary fs-12">Show First/Previous Lead Stage Column in LM/AM</p>
+                      <p class="mb-2 text-secondary fs-12">Download Counselling Sheet Button</p>
+                      <p class="mb-2 text-secondary fs-12">View as Lead</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div data-id="5" data-group_id="1" class="permission_module_id">
+                  <a href="#module_5" data-toggle="collapse" class="py-3 border-bottom d-block text-dark collapsed"
+                    aria-expanded="false">Communication Manager</a>
+                  <div class="border-bottom collapse" id="module_5" data-parent="#permission-accordion" style="">
+                    <div class="p-3" id="view_permissions_name_div_5">
+                      <p class="mb-2 text-secondary fs-12">Allow Single Communication Action</p>
+                      <p class="mb-2 text-secondary fs-12">Allow Bulk Email Communication</p>
+                      <p class="mb-2 text-secondary fs-12">Allow Bulk SMS Communication</p>
+                      <p class="mb-2 text-secondary fs-12">Allow Bulk OBD Communication</p>
+                      <p class="mb-2 text-secondary fs-12">Show Bulk Communication Action</p>
+                      <p class="mb-2 text-secondary fs-12">Allow Single Email Communication</p>
+                      <p class="mb-2 text-secondary fs-12">Allow Single SMS Communication</p>
+                      <p class="mb-2 text-secondary fs-12">View Communication Performance Report</p>
+                      <p class="mb-2 text-secondary fs-12">Download Communication Reports</p>
+                      <p class="mb-2 text-secondary fs-12">Download Lead Level Communication Report</p>
+                      <p class="mb-2 text-secondary fs-12">Allow SMS via Transactional Channel</p>
+                      <p class="mb-2 text-secondary fs-12">Stop Scheduled Communication</p>
+                      <p class="mb-2 text-secondary fs-12">View Email and SMS Expense</p>
+                      <p class="mb-2 text-secondary fs-12">View Lead Level Communication Report</p>
+                      <p class="mb-2 text-secondary fs-12">Show Email and SMS Consumption Tabs</p>
+                      <p class="mb-2 text-secondary fs-12">View Domestic/International SMS Break-up</p>
+                      <p class="mb-2 text-secondary fs-12">Send Email on Application Allocation to College User</p>
+                      <p class="mb-2 text-secondary fs-12">Send Email on Payment Approval to College User</p>
+                      <p class="mb-2 text-secondary fs-12">Send Email on Application Submission to College User</p>
+                      <p class="mb-2 text-secondary fs-12">Send SMS on Application Allocation to College User</p>
+                      <p class="mb-2 text-secondary fs-12">Send SMS on Payment Approval to College User</p>
+                      <p class="mb-2 text-secondary fs-12">Send SMS on Application Submission to College User</p>
+                      <p class="mb-2 text-secondary fs-12">View Transaction History</p>
+                      <p class="mb-2 text-secondary fs-12">Whatsapp Click to Chat</p>
+                      <p class="mb-2 text-secondary fs-12">SMS via Transactional Channel(Raw Data)</p>
+                      <p class="mb-2 text-secondary fs-12">Enable Bulk Notification</p>
+                      <p class="mb-2 text-secondary fs-12">Allow Recurring Communication</p>
+                      <p class="mb-2 text-secondary fs-12">WhatsApp Business</p>
+                      <p class="mb-2 text-secondary fs-12">Bulk WhatsApp Business</p>
+                      <p class="mb-2 text-secondary fs-12">Send emails from user Email ID &amp; Name</p>
+                      <p class="mb-2 text-secondary fs-12">Communication Report</p>
+                      <p class="mb-2 text-secondary fs-12">Resubscribe user</p>
+                      <p class="mb-2 text-secondary fs-12">Manage Suppression</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div data-id="15" data-group_id="1" class="permission_module_id">
+                  <a href="#module_6" data-toggle="collapse" class="py-3 border-bottom d-block text-dark collapsed"
+                    aria-expanded="false">Marketing Automation</a>
+                  <div class="border-bottom collapse" id="module_6" data-parent="#permission-accordion" style="">
+                    <div class="p-3" id="view_permissions_name_div_15">
+                      <p class="mb-2 text-secondary fs-12">View Automations List</p>
+                      <p class="mb-2 text-secondary fs-12">Publish Automation</p>
+                      <p class="mb-2 text-secondary fs-12">Stop Automation</p>
+                      <p class="mb-2 text-secondary fs-12">Create Automation on LMS List</p>
+                      <p class="mb-2 text-secondary fs-12">Create Automation on Segment</p>
+                      <p class="mb-2 text-secondary fs-12">Niaa</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div data-id="9" data-group_id="1" class="permission_module_id">
+                  <a href="#module_7" data-toggle="collapse" class="py-3 border-bottom d-block text-dark collapsed"
+                    aria-expanded="false">Payment Manager</a>
+                  <div class="border-bottom collapse" id="module_7" data-parent="#permission-accordion" style="">
+                    <div class="p-3" id="view_permissions_name_div_9">
+                      <p class="mb-2 text-secondary fs-12">View Details of Vouchers in a Batch</p>
+                      <p class="mb-2 text-secondary fs-12">Download Voucher Details of a Batch</p>
+                      <p class="mb-2 text-secondary fs-12">Create Voucher</p>
+                      <p class="mb-2 text-secondary fs-12">Download Used Vouchers Details</p>
+                      <p class="mb-2 text-secondary fs-12">Download Used Vouchers Batches</p>
+                      <p class="mb-2 text-secondary fs-12">View Voucher Batches</p>
+                      <p class="mb-2 text-secondary fs-12">View Discount Campaigns</p>
+                      <p class="mb-2 text-secondary fs-12">Create Discount Campaign</p>
+                      <p class="mb-2 text-secondary fs-12">View Discount Coupon Activity Log</p>
+                      <p class="mb-2 text-secondary fs-12">Download Discount Coupons</p>
+                      <p class="mb-2 text-secondary fs-12">Disable Discount Campaign</p>
+                      <p class="mb-2 text-secondary fs-12">View Discount Coupon Token</p>
+                      <p class="mb-2 text-secondary fs-12">Download Campaign-wise Discount Coupon</p>
+                      <p class="mb-2 text-secondary fs-12">Disable Discount Coupons</p>
+                      <p class="mb-2 text-secondary fs-12">Payment Response</p>
+                      <p class="mb-2 text-secondary fs-12">Download Ack receipts in Bulk from Purchase Summary</p>
+                      <p class="mb-2 text-secondary fs-12">Issue Coupon</p>
+                      <p class="mb-2 text-secondary fs-12">Return Coupon</p>
+                      <p class="mb-2 text-secondary fs-12">Receive Coupon</p>
+                      <p class="mb-2 text-secondary fs-12">Return And Receive Coupon</p>
+                      <p class="mb-2 text-secondary fs-12">Sell Coupon</p>
+                      <p class="mb-2 text-secondary fs-12">Force Return Coupon</p>
+                      <p class="mb-2 text-secondary fs-12">Force Return Receive Coupon</p>
+                      <p class="mb-2 text-secondary fs-12">Auto-receive Coupon</p>
+                      <p class="mb-2 text-secondary fs-12">Mark As Centre</p>
+                      <p class="mb-2 text-secondary fs-12">Show Own Coupon Campaign</p>
+                      <p class="mb-2 text-secondary fs-12">Enable Cash for Agent</p>
+                      <p class="mb-2 text-secondary fs-12">Enable Agent to enter Cash Amount</p>
+                      <p class="mb-2 text-secondary fs-12">Enter Minimum amount</p>
+                      <p class="mb-2 text-secondary fs-12">Approve Minimum amount</p>
+                      <p class="mb-2 text-secondary fs-12">Enable DD for Agent</p>
+                      <p class="mb-2 text-secondary fs-12">Configure Out-Campus Location</p>
+                      <p class="mb-2 text-secondary fs-12">Enable Cash Receipt for Agent</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div data-id="7" data-group_id="1" class="permission_module_id">
+                  <a href="#module_8" data-toggle="collapse" class="py-3 border-bottom d-block text-dark collapsed"
+                    aria-expanded="false">Query Manager</a>
+                  <div class="border-bottom collapse" id="module_8" data-parent="#permission-accordion" style="">
+                    <div class="p-3" id="view_permissions_name_div_7">
+                      <p class="mb-2 text-secondary fs-12">View Applicants Query</p>
+                      <p class="mb-2 text-secondary fs-12">Manage FAQs</p>
+                      <p class="mb-2 text-secondary fs-12">Re-assign Query</p>
+                      <p class="mb-2 text-secondary fs-12">Download Query Attachments</p>
+                      <p class="mb-2 text-secondary fs-12">Search Queries via Email or Mobile</p>
+                      <p class="mb-2 text-secondary fs-12">Re-assign Queries in Bulk</p>
+                      <p class="mb-2 text-secondary fs-12">show Application Stage</p>
+                      <p class="mb-2 text-secondary fs-12">Allow user to Re-open Query</p>
+                      <p class="mb-2 text-secondary fs-12">Download Query</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div data-id="17" data-group_id="1" class="permission_module_id">
+                  <a href="#module_9" data-toggle="collapse" class="py-3 border-bottom d-block text-dark collapsed">Post
+                    Application Manager</a>
+                  <div class="border-bottom collapse" id="module_9" data-parent="#permission-accordion">
+                    <div class="p-3" id="view_permissions_name_div_17">
+
+                    </div>
+                  </div>
+                </div>
+
+                <div data-id="14" data-group_id="1" class="permission_module_id">
+                  <a href="#module_10" data-toggle="collapse" class="py-3 border-bottom d-block text-dark collapsed">Raw
+                    Data</a>
+                  <div class="border-bottom collapse" id="module_10" data-parent="#permission-accordion">
+                    <div class="p-3" id="view_permissions_name_div_14">
+
+                    </div>
+                  </div>
+                </div>
+
+                <div data-id="10" data-group_id="1" class="permission_module_id">
+                  <a href="#module_11" data-toggle="collapse" class="py-3 border-bottom d-block text-dark collapsed"
+                    aria-expanded="false">Reports &amp; Analytics</a>
+                  <div class="border-bottom collapse" id="module_11" data-parent="#permission-accordion" style="">
+                    <div class="p-3" id="view_permissions_name_div_10">
+                      <p class="mb-2 text-secondary fs-12">Edit Folder</p>
+                      <p class="mb-2 text-secondary fs-12">Create New Folder</p>
+                      <p class="mb-2 text-secondary fs-12">Delete Folder</p>
+                      <p class="mb-2 text-secondary fs-12">Create/Edit Report</p>
+                      <p class="mb-2 text-secondary fs-12">Delete Reports</p>
+                      <p class="mb-2 text-secondary fs-12">Create New Schedule</p>
+                      <p class="mb-2 text-secondary fs-12">Edit Schedule</p>
+                      <p class="mb-2 text-secondary fs-12">Delete Schedule</p>
+                      <p class="mb-2 text-secondary fs-12">Manage Folder</p>
+                      <p class="mb-2 text-secondary fs-12">View Reports</p>
+                      <p class="mb-2 text-secondary fs-12">View Reports Schedule</p>
+                      <p class="mb-2 text-secondary fs-12">Run or Download Report</p>
+                      <p class="mb-2 text-secondary fs-12">View Client Health Monitoring Screen</p>
+                      <p class="mb-2 text-secondary fs-12">View QA Monitoring Screen</p>
+                      <p class="mb-2 text-secondary fs-12">View Finance Monitoring Screen</p>
+                      <p class="mb-2 text-secondary fs-12">View Benchmarking Dashboard</p>
+                      <p class="mb-2 text-secondary fs-12">View Trend Analysis</p>
+                      <p class="mb-2 text-secondary fs-12">View Student Quality Index</p>
+                      <p class="mb-2 text-secondary fs-12">View ERP Error</p>
+                      <p class="mb-2 text-secondary fs-12">View ERP Data</p>
+                      <p class="mb-2 text-secondary fs-12">View Data Flow Logs</p>
+                      <p class="mb-2 text-secondary fs-12">View Data Porting</p>
+                      <p class="mb-2 text-secondary fs-12">View Automation Request Log</p>
+                      <p class="mb-2 text-secondary fs-12">View Facebook Ad Lead Log</p>
+                      <p class="mb-2 text-secondary fs-12">Administrator Dashboard</p>
+                      <p class="mb-2 text-secondary fs-12">View Daily Cumulative Count Log</p>
+                      <p class="mb-2 text-secondary fs-12">Upload Benchmarking</p>
+                      <p class="mb-2 text-secondary fs-12">School Dashboard</p>
+                      <p class="mb-2 text-secondary fs-12">Show School Dropdown in School Dashboard</p>
+                      <p class="mb-2 text-secondary fs-12">Admin Dashboard</p>
+                      <p class="mb-2 text-secondary fs-12">View Demographic Details Graphs (School Analytics)</p>
+                      <p class="mb-2 text-secondary fs-12">View Educational Background Graphs (School Analytics)</p>
+                      <p class="mb-2 text-secondary fs-12">View Trends Graphs (School Analytics)</p>
+                      <p class="mb-2 text-secondary fs-12">View Marketing Graphs (School Analytics)</p>
+                      <p class="mb-2 text-secondary fs-12">View Misc Graphs (School Analytics)</p>
+                      <p class="mb-2 text-secondary fs-12">Marketing Dashboard</p>
+                      <p class="mb-2 text-secondary fs-12">Traffic Dashboard</p>
+                      <p class="mb-2 text-secondary fs-12">Manage Campaign Dialing Reports</p>
+                      <p class="mb-2 text-secondary fs-12">Client API Leads Dashboard</p>
+                      <p class="mb-2 text-secondary fs-12">Client API Data Issues</p>
+                      <p class="mb-2 text-secondary fs-12">Client API Application Dashboard</p>
+                      <p class="mb-2 text-secondary fs-12">Display Application Benchmark Data In Dashlet</p>
+                      <p class="mb-2 text-secondary fs-12">Display Leads Benchmark Data In Dashlet</p>
+                      <p class="mb-2 text-secondary fs-12">Credit Monitoring</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div data-id="2" data-group_id="1" class="permission_module_id">
+                  <a href="#module_12" data-toggle="collapse"
+                    class="py-3 border-bottom d-block text-dark collapsed">Template Manager</a>
+                  <div class="border-bottom collapse" id="module_12" data-parent="#permission-accordion">
+                    <div class="p-3" id="view_permissions_name_div_2">
+
+                    </div>
+                  </div>
+                </div>
+
+                <div data-id="1" data-group_id="1" class="permission_module_id">
+                  <a href="#module_13" data-toggle="collapse"
+                    class="py-3 border-bottom d-block text-dark collapsed">FormDesk</a>
+                  <div class="border-bottom collapse" id="module_13" data-parent="#permission-accordion">
+                    <div class="p-3" id="view_permissions_name_div_1">
+
+                    </div>
+                  </div>
+                </div>
+
+                <div data-id="12" data-group_id="1" class="permission_module_id">
+                  <a href="#module_14" data-toggle="collapse"
+                    class="py-3 border-bottom d-block text-dark collapsed">User Manager</a>
+                  <div class="border-bottom collapse" id="module_14" data-parent="#permission-accordion">
+                    <div class="p-3" id="view_permissions_name_div_12">
+
+                    </div>
+                  </div>
+                </div>
+
+                <div data-id="11" data-group_id="1" class="permission_module_id">
+                  <a href="#module_15" data-toggle="collapse"
+                    class="py-3 border-bottom d-block text-dark collapsed">Post Application</a>
+                  <div class="border-bottom collapse" id="module_15" data-parent="#permission-accordion">
+                    <div class="p-3" id="view_permissions_name_div_11">
+
+                    </div>
+                  </div>
+                </div>
+
+                <div data-id="16" data-group_id="1" class="permission_module_id">
+                  <a href="#module_16" data-toggle="collapse"
+                    class="py-3 border-bottom d-block text-dark collapsed">Settings</a>
+                  <div class="border-bottom collapse" id="module_16" data-parent="#permission-accordion">
+                    <div class="p-3" id="view_permissions_name_div_16">
+
+                    </div>
+                  </div>
+                </div>
+
+                <div data-id="18" data-group_id="1" class="permission_module_id">
+                  <a href="#module_17" data-toggle="collapse"
+                    class="py-3 border-bottom d-block text-dark collapsed">Mobile App</a>
+                  <div class="border-bottom collapse" id="module_17" data-parent="#permission-accordion">
+                    <div class="p-3" id="view_permissions_name_div_18">
+
+                    </div>
+                  </div>
+                </div>
+
+                <div data-id="20" data-group_id="1" class="permission_module_id">
+                  <a href="#module_18" data-toggle="collapse" class="py-3 border-bottom d-block text-dark collapsed"
+                    aria-expanded="false">Virtual Post Application Platform</a>
+                  <div class="border-bottom collapse" id="module_18" data-parent="#permission-accordion" style="">
+                    <div class="p-3" id="view_permissions_name_div_20">
+                      <p class="mb-2 text-secondary fs-12">Assign/Ressign Slot</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div data-id="30" data-group_id="1" class="permission_module_id">
+                  <a href="#module_19" data-toggle="collapse"
+                    class="py-3 border-bottom d-block text-dark collapsed">Extensions</a>
+                  <div class="border-bottom collapse" id="module_19" data-parent="#permission-accordion">
+                    <div class="p-3" id="view_permissions_name_div_30">
+
+                    </div>
+                  </div>
+                </div>
+
+                <div data-id="31" data-group_id="1" class="permission_module_id">
+                  <a href="#module_20" data-toggle="collapse" class="py-3 border-bottom d-block text-dark"
+                    aria-expanded="false">Appointment Manager</a>
+                  <div class="border-bottom collapse" id="module_20" data-parent="#permission-accordion" style="">
+                    <div class="p-3" id="view_permissions_name_div_31">
+                      <p class="mb-2 text-secondary fs-12">Appointment Manager</p>
+                      <p class="mb-2 text-secondary fs-12">Book/Edit Appointment</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer justify-content-center"><button class="btn btn-sm btn-outline-secondary px-5"
+            data-dismiss="modal">Close</button></div>
+      </div>
+    </div>
+  </div>
+
+
+  <h2>JavaScript Callbacks</h2>
+
+  <p>Do a calculation and then display the result.</p>
+
+  <p id="demo"></p>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
+  <script>
+    let myFun = async () => {
+      setTimeout(() => {
+        console.log('myFun with timeOut');
+      }, 2000);
+    }
+    let secFun = () => {
+      console.log('second');
+    }
+    myFun().then(secFun());
+  </script>
+
+  <!-- <script>
+    $('#permission-list-modal').modal();
+    $('#permission-list-modal .collapse').on('shown.bs.collapse', function (e) {
+      $('#permission-list-modal .modal-body').scrollTop(0);
+      let positionTop = $(this).prev('[data-toggle="collapse"]').position().top;
+      $('#permission-list-modal .modal-body').scrollTop(positionTop);
+    });
+
+
+  </script> -->
+</body>
+
+</html>

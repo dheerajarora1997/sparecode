@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG Loader</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+  <style>
+    .gauge {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      transform: rotate(-90deg);
+    }
+
+    .gauge-base {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      fill: orange;
+      opacity: .1;
+    }
+
+    .gauge-arc {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      stroke: red;
+      fill: transparent;
+      stroke-linecap: round;
+      stroke-dasharray: 0, 351.858;
+      transition: stroke-dasharray 1s;
+    }
+
+    .gauge-headercol {
+      position: relative;
+      text-align: center;
+      display: inline-block;
+    }
+
+    .gauge-percentage {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 25px;
+    }
+  </style>
+  <style>
+    .gauge {
+      transform: rotate(-180deg);
+    }
+
+    .gauge-base {
+      clip: rect(0px, 60px, 200px, 0px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="jumbotron">
+    <div class="gauge-headercol" id="gauge-loader" data-total="300" data-used="200">
+      <svg class="gauge" viewBox="0 0 120 120">
+        <circle class="gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="gauge-arc" r="56" cx="60" cy="60" stroke-width="8"></circle>
+      </svg>
+      <div class="gauge-percentage"></div>
+    </div>
+  </div>
+  <div class="jumbotron rounded-none">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-12">
+        <h3 class="mb-5 text-center">Svg Loader</h3>
+      </div>
+      <div class="col-4">
+        <form action="">
+          <div class="form-group"><input id="myColor" type="color" class="form-control p-0" placeholder="#f0f0f0"></div>
+          <div class="form-group"><input id="total" type="text" class="form-control" placeholder="Total Value" required>
+          </div>
+          <div class="form-group"><input id="used" type="text" class="form-control" placeholder="Used Value" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Check</button>
+
+        </form>
+      </div>
+      <div class="col-2 text-center">
+        <div class="gauge-headercol" id="gauge-loader" data-total="300" data-used="290">
+          <svg class="gauge" viewBox="0 0 120 120">
+            <circle class="gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+            <circle class="gauge-arc" r="56" cx="60" cy="60" stroke-width="8"></circle>
+          </svg>
+          <div class="gauge-percentage"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- stroke-dasharray: 312.673, 351.858;" -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- <script>
+    $('form').submit(function (e) {
+      e.preventDefault();
+
+      // Get value from input
+
+      $('.gauge-arc').css('stroke-dasharray', '0, 360');
+      let myColor = $('#myColor').val();
+      let total = $('#total').val();
+      let used = $('#used').val();
+      $('.gauge-base').css('fill', myColor);
+      $('.gauge-arc').css('stroke', myColor);
+
+      // Get value from Data attribute
+      // let total = $('#gauge-loader').data('total');
+      // let used = $('#gauge-loader').data('used');
+
+      let percentValue = Math.ceil((used * 100) / total);
+      let gaugeValue = percentValue * 3.5;
+      $('.gauge-percentage').html(percentValue + '%');
+      setTimeout(() => {
+      $('.gauge-arc').css('stroke-dasharray', gaugeValue + ', 360');
+    }, 100);
+    });
+  </script> -->
+  <script>
+    // Get value from Data attribute
+    let total = $('#gauge-loader').data('total');
+    let used = $('#gauge-loader').data('used');
+    let percentValue = Math.ceil((used * 100) / total);
+    let gaugeValue = percentValue * 1.75;
+    $('.gauge-percentage').html(percentValue + '%');
+    setTimeout(() => {
+      $('.gauge-arc').css('stroke-dasharray', gaugeValue + ', 360');
+    }, 100);
+
+    $('#permission-list-modal a[data-toggle="collapse"]').click(function(){
+      let placement = $(this).closest('.permission_module_id').offset().top;
+      alert(placement - 60);
+      $('#permission-list-modal .modal-body').scrollTop(placement);
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>student portal tabs</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
+  <style>
+    .nav.nav-tabs{overflow:hidden; overflow-x: auto; max-width: 100%; display: flex;}
+    .nav.nav-tabs li a{border: none; color: #323232;}
+    .nav.nav-tabs li a:focus,.nav.nav-tabs li a:hover{background: none; border: none; color: #4b7bdd;}
+    .nav.nav-tabs li.active a{border-bottom: 4px solid #4b7bdd; color: #4b7bdd;}
+    .preview-section{position: relative; margin-top: 10px;}
+    .preview-section iframe{min-height: 400px; max-height: 400px; min-width: 100%;}
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="active"><a href="#">Home</a></li>
+      <li role="presentation"><a href="#">Profile</a></li>
+      <li role="presentation"><a href="#">Messages</a></li>
+
+    </ul>
+    <div class="preview-section">
+      <iframe src="http://www.africau.edu/images/default/sample.pdf" frameborder="0"></iframe>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script>
+    $('.nav.nav-tabs li').click(function(){
+      $('.nav.nav-tabs li').removeClass('active');
+      $(this).addClass('active');
+    });
+  </script>
+</body>
+
+</html>
