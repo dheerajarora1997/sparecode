@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Page Title</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+.border-collapse-unset {
+    border-collapse: unset;
+}
+    .table-parent {
+      overflow: auto;
+      width: 800px;
+      max-width: 100%;
+      height: 250px;
+      border: 1px solid #eeeef0;
+      font-family: 'Roboto', sans-serif;
+      font-size: 13px;
+      margin: 0 auto;
+    }
+
+    .table-parent td,
+    .table-parent th {
+      padding: 12px 8px;
+      white-space: nowrap;
+      border-collapse: separate;
+    }
+
+    .table-parent th {
+      background-color: #fff;
+      text-align: left;
+    }
+
+    .table-parent table {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .table-parent table[data-colfix="2"] td:first-child,
+    .table-parent table[data-colfix="2"] th:first-child {
+      position: sticky;
+      left: 0;
+      z-index: 1;
+      border-right: 1px solid #eee;
+    }
+
+    .table-parent td:first-child,
+    .table-parent td:last-child {
+      background-color: #fff;
+    }
+
+    .table-parent table[data-colfix="2"] td:nth-child(2) {
+      position: sticky;
+      z-index: 1;
+      background-color: #fff;
+      border-right: 1px solid #eee;
+    }
+
+    .table-parent table[data-colfix="2"] th:nth-child(2) {
+      position: sticky;
+      z-index: 2;
+      border-right: 1px solid #eee;
+    }
+
+    .table-parent table[data-col-fixed="true"] td:last-child,
+    .table-parent table[data-col-fixed="true"] th:last-child {
+      position: sticky;
+      right: 0;
+      z-index: 1;
+      border-left: 1px solid #eee;
+    }
+
+    .table-parent table[data-col-fixed="true"] thead tr th {
+      position: sticky;
+      top: 0;
+    }
+
+    .table-parent thead tr th {
+      background-color: rgb(224, 227, 232);
+    }
+
+    .table-parent table[data-colfix="2"] th:first-child,
+    .table-parent table[data-colfix="2"] th:last-child {
+      z-index: 2;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="table-parent table-responsive" id="tableparent">
+    <table cellpadding="0" cellspacing="0" data-col-fixed="true" data-colfix="2" data-col-left="150" class="table border-collapse-unset">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Widget Name</th>
+          <th>Institute Name</th>
+          <th>Form Name</th>
+          <th>Created By</th>
+          <th>Created On</th>
+          <th>Modified By</th>
+          <th>Modified On</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>876</td>
+          <td>sdgds xc xc</td>
+          <td>ISBR Global PGDP</td>
+          <td>NPF Automation</td>
+          <td>14 May 2021</td>
+          <td>Disable</td>
+          <td>09 Jun</td>
+          <td>Monday</td>
+          <td>Pending</td>
+          <td>Edit</td>
+        </tr>
+
+        <tr>
+          <td>876</td>
+          <td>sdgds xc xc</td>
+          <td>ISBR Global PGDP</td>
+          <td>NPF Automation</td>
+          <td>14 May 2021</td>
+          <td>Disable</td>
+          <td>09 Jun</td>
+          <td>Monday</td>
+          <td>Pending</td>
+          <td>Edit</td>
+        </tr>
+
+        <tr>
+          <td>876</td>
+          <td>sdgds xc xc</td>
+          <td>ISBR Global PGDP</td>
+          <td>NPF Automation</td>
+          <td>14 May 2021</td>
+          <td>Disable</td>
+          <td>09 Jun</td>
+          <td>Monday</td>
+          <td>Pending</td>
+          <td>Edit</td>
+        </tr>
+
+        <tr>
+          <td>876</td>
+          <td>sdgds xc xc</td>
+          <td>ISBR Global PGDP</td>
+          <td>NPF Automation</td>
+          <td>14 May 2021</td>
+          <td>Disable</td>
+          <td>09 Jun</td>
+          <td>Monday</td>
+          <td>Pending</td>
+          <td>Edit</td>
+        </tr>
+
+        <tr>
+          <td>876</td>
+          <td>sdgds xc xc</td>
+          <td>ISBR Global PGDP</td>
+          <td>NPF Automation</td>
+          <td>14 May 2021</td>
+          <td>Disable</td>
+          <td>09 Jun</td>
+          <td>Monday</td>
+          <td>Pending</td>
+          <td>Edit</td>
+        </tr>
+
+        <tr>
+          <td>876</td>
+          <td>sdgds xc xc</td>
+          <td>ISBR Global PGDP</td>
+          <td>NPF Automation</td>
+          <td>14 May 2021</td>
+          <td>Disable</td>
+          <td>09 Jun</td>
+          <td>Monday</td>
+          <td>Pending</td>
+          <td>Edit</td>
+        </tr>
+
+        <tr>
+          <td>876</td>
+          <td>sdgds xc xc</td>
+          <td>ISBR Global PGDP</td>
+          <td>NPF Automation</td>
+          <td>14 May 2021</td>
+          <td>Disable</td>
+          <td>09 Jun</td>
+          <td>Monday</td>
+          <td>Pending</td>
+          <td>Edit</td>
+        </tr>
+
+        <tr>
+          <td>876</td>
+          <td>sdgds xc xc</td>
+          <td>ISBR Global PGDP</td>
+          <td>NPF Automation</td>
+          <td>14 May 2021</td>
+          <td>Disable</td>
+          <td>09 Jun</td>
+          <td>Monday</td>
+          <td>Pending</td>
+          <td>Edit</td>
+        </tr>
+
+        <tr>
+          <td>876</td>
+          <td>sdgds xc xc</td>
+          <td>ISBR Global PGDP</td>
+          <td>NPF Automation</td>
+          <td>14 May 2021</td>
+          <td>Disable</td>
+          <td>09 Jun</td>
+          <td>Monday</td>
+          <td>Pending</td>
+          <td>Edit</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      //$('[id=tableparent]').css('position', 'relative');
+      const colLeft = $('table').data('col-left');
+      $('table[data-colfix="2"] td:nth-child(2)').css('left', colLeft);
+      $('table[data-colfix="2"] th:nth-child(2)').css('left', colLeft);
+      $('table[data-colfix="2"] th:nth-child(1)').css('width', colLeft);
+      $('table[data-colfix="2"] td:nth-child(1)').css('width', colLeft);
+      $('table[data-colfix="2"] th:nth-child(1)').css('min-width', colLeft);
+     
+    });
+  </script>
+</body>
+
+</html>

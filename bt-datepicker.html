@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://in5cdn.npfs.co/css/college/bootstrap-datepicker.css?1640170796">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" /> -->
+    <link rel="stylesheet" href="https://in5cdn.npfs.co/css/college/bootstrap-datetimepicker.css">
+</head>
+
+<body>
+  <span id="startStaticDate">14/04/2022 12:00:00</span>
+  <span id="endStaticDate">08/06/2022 12:00:00</span>
+  <hr>
+  <div style="position: relative;">
+    start
+    <input type="text" class="date-time-picker" id="startDate">
+  </div>
+  <!-- <div>
+    End
+    <input type="text" class="date-time-picker" id="endDate">
+  </div> -->
+  <script src="https://in5cdn.npfs.co/js/lib/jquery.min.js?1640170798"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
+    integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+    crossorigin="anonymous"></script>
+  <!-- <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script> -->
+  <script src="https://in5cdn.npfs.co/js/college/moment.js"></script>
+  <script src="https://in5cdn.npfs.co/js/college/bootstrap-datetimepicker.min.js"></script>
+  <!-- <script>
+    let startDate = $('#startStaticDate').html();
+    let endDate = $('#endStaticDate').html();
+    $('#startDate').datetimepicker({
+      format: 'DD/MM/YYYY hh:mm:ss',
+      defaultDate: startDate,
+      minDate: startDate,
+      maxDate: endDate,
+    });
+    $('#endDate').datetimepicker({
+      format: 'DD/MM/YYYY hh:mm:ss',
+      defaultDate: endDate,
+      minDate: startDate,
+      maxDate: endDate,
+    });
+  </script> -->
+  <script>
+    $('.date-time-picker').datetimepicker({
+      format: 'DD/MM/YYYY HH:mm',
+      // pick12HourFormat: false,
+      // defaultDate: "14/04/2022",
+    });
+
+
+    $('.date-time-picker').data("DateTimePicker").minDate('14/04/2022 00:10').maxDate('16/04/2022 00:10');
+
+  </script>
+</body>
+
+</html>

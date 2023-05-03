@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap 4.6 with jQuery</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container py-5">
+    <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="Top popover" data-trigger="hover" data-custom-class="bg-danger" data-html="true" title="hello world">
+      Popover on top
+    </button>
+
+    <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="Top popover" data-trigger="hover" data-custom-class="bg-warning">
+      Popover on top
+    </button>
+    <a tabindex="0" class="p-2 mt-2 ml-2 text-secondary fs-11" href="javascript:void(0)" role="button" data-toggle="popover" data-trigger="hover" data-placement="right" data-container="body" data-custom-class="bg-danger" data-html="true" title="" data-content="Jeevandeep Group of Educational Institutes courses" data-original-title="Jeevandeep Group of Educational Institutes courses">shgdcsahd</a>
+  </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
+<script>
+  $(function () {
+    $('[data-toggle="popover"]').popover();
+  })
+</script>
+
+</html>
